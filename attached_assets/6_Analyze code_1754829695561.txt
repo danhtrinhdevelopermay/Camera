@@ -1,0 +1,87 @@
+﻿2025-08-10T12:40:46.8100952Z ##[group]Run flutter analyze
+2025-08-10T12:40:46.8101667Z [36;1mflutter analyze[0m
+2025-08-10T12:40:46.8143044Z shell: /usr/bin/bash -e {0}
+2025-08-10T12:40:46.8143276Z env:
+2025-08-10T12:40:46.8143522Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-08-10T12:40:46.8143913Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.16-8/x64
+2025-08-10T12:40:46.8144296Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.32.0-x64
+2025-08-10T12:40:46.8144611Z   PUB_CACHE: /home/runner/.pub-cache
+2025-08-10T12:40:46.8144849Z ##[endgroup]
+2025-08-10T12:40:59.3079566Z Analyzing Camera...                                             
+2025-08-10T12:40:59.3085295Z 
+2025-08-10T12:40:59.3106064Z    info • The type name 'iOS18CameraApp' isn't an UpperCamelCase identifier • lib/main.dart:11:7 • camel_case_types
+2025-08-10T12:40:59.3107916Z    info • The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' • lib/screens/camera_screen.dart:1:8 • unnecessary_import
+2025-08-10T12:40:59.3109521Z    info • Don't invoke 'print' in production code • lib/screens/camera_screen.dart:40:7 • avoid_print
+2025-08-10T12:40:59.3110574Z    info • Don't invoke 'print' in production code • lib/screens/camera_screen.dart:87:7 • avoid_print
+2025-08-10T12:40:59.3112201Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:150:32 • deprecated_member_use
+2025-08-10T12:40:59.3113980Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:169:32 • deprecated_member_use
+2025-08-10T12:40:59.3115729Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:210:40 • deprecated_member_use
+2025-08-10T12:40:59.3117476Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:211:40 • deprecated_member_use
+2025-08-10T12:40:59.3119230Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:216:40 • deprecated_member_use
+2025-08-10T12:40:59.3121003Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:217:40 • deprecated_member_use
+2025-08-10T12:40:59.3122916Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:243:49 • deprecated_member_use
+2025-08-10T12:40:59.3124656Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:244:50 • deprecated_member_use
+2025-08-10T12:40:59.3126703Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:246:49 • deprecated_member_use
+2025-08-10T12:40:59.3128474Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:247:50 • deprecated_member_use
+2025-08-10T12:40:59.3130218Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:252:46 • deprecated_member_use
+2025-08-10T12:40:59.3147835Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:253:46 • deprecated_member_use
+2025-08-10T12:40:59.3149819Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:275:44 • deprecated_member_use
+2025-08-10T12:40:59.3151969Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:276:44 • deprecated_member_use
+2025-08-10T12:40:59.3154237Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:281:44 • deprecated_member_use
+2025-08-10T12:40:59.3156344Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_screen.dart:282:44 • deprecated_member_use
+2025-08-10T12:40:59.3158491Z    info • The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' • lib/screens/camera_web_screen.dart:1:8 • unnecessary_import
+2025-08-10T12:40:59.3160858Z    info • The import of 'package:flutter/services.dart' is unnecessary because all of the used elements are also provided by the import of 'dart:ui' • lib/screens/camera_web_screen.dart:3:8 • unnecessary_import
+2025-08-10T12:40:59.3163192Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:76:49 • deprecated_member_use
+2025-08-10T12:40:59.3165156Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:90:47 • deprecated_member_use
+2025-08-10T12:40:59.3167076Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:99:47 • deprecated_member_use
+2025-08-10T12:40:59.3168984Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:135:32 • deprecated_member_use
+2025-08-10T12:40:59.3170890Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:154:32 • deprecated_member_use
+2025-08-10T12:40:59.3173042Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:195:40 • deprecated_member_use
+2025-08-10T12:40:59.3174990Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:196:40 • deprecated_member_use
+2025-08-10T12:40:59.3176905Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:201:40 • deprecated_member_use
+2025-08-10T12:40:59.3178830Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:202:40 • deprecated_member_use
+2025-08-10T12:40:59.3180732Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:228:49 • deprecated_member_use
+2025-08-10T12:40:59.3183174Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:229:50 • deprecated_member_use
+2025-08-10T12:40:59.3185093Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:231:49 • deprecated_member_use
+2025-08-10T12:40:59.3186890Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:232:50 • deprecated_member_use
+2025-08-10T12:40:59.3188754Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:237:46 • deprecated_member_use
+2025-08-10T12:40:59.3190676Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:238:46 • deprecated_member_use
+2025-08-10T12:40:59.3192976Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:260:44 • deprecated_member_use
+2025-08-10T12:40:59.3194029Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:261:44 • deprecated_member_use
+2025-08-10T12:40:59.3195266Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:266:44 • deprecated_member_use
+2025-08-10T12:40:59.3196282Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:267:44 • deprecated_member_use
+2025-08-10T12:40:59.3197281Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/camera_web_screen.dart:302:30 • deprecated_member_use
+2025-08-10T12:40:59.3198317Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/blur_overlay.dart:31:37 • deprecated_member_use
+2025-08-10T12:40:59.3199350Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/blur_overlay.dart:34:39 • deprecated_member_use
+2025-08-10T12:40:59.3200344Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/blur_overlay.dart:132:38 • deprecated_member_use
+2025-08-10T12:40:59.3201764Z    info • The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' • lib/widgets/camera_controls.dart:1:8 • unnecessary_import
+2025-08-10T12:40:59.3203430Z    info • Don't invoke 'print' in production code • lib/widgets/camera_controls.dart:46:7 • avoid_print
+2025-08-10T12:40:59.3204969Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls.dart:55:34 • deprecated_member_use
+2025-08-10T12:40:59.3206556Z    info • Don't use 'BuildContext's across async gaps • lib/widgets/camera_controls.dart:60:20 • use_build_context_synchronously
+2025-08-10T12:40:59.3207892Z    info • Use a 'SizedBox' to add whitespace to a layout • lib/widgets/camera_controls.dart:77:15 • sized_box_for_whitespace
+2025-08-10T12:40:59.3209013Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls.dart:98:45 • deprecated_member_use
+2025-08-10T12:40:59.3210606Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls.dart:130:45 • deprecated_member_use
+2025-08-10T12:40:59.3211762Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls.dart:137:44 • deprecated_member_use
+2025-08-10T12:40:59.3212784Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls.dart:182:40 • deprecated_member_use
+2025-08-10T12:40:59.3213980Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls.dart:183:40 • deprecated_member_use
+2025-08-10T12:40:59.3214980Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls.dart:188:40 • deprecated_member_use
+2025-08-10T12:40:59.3215974Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls.dart:189:40 • deprecated_member_use
+2025-08-10T12:40:59.3216837Z    info • Use a 'SizedBox' to add whitespace to a layout • lib/widgets/camera_controls.dart:206:17 • sized_box_for_whitespace
+2025-08-10T12:40:59.3217725Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls.dart:223:62 • deprecated_member_use
+2025-08-10T12:40:59.3218898Z    info • The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' • lib/widgets/camera_controls_web.dart:1:8 • unnecessary_import
+2025-08-10T12:40:59.3220530Z    info • Don't invoke 'print' in production code • lib/widgets/camera_controls_web.dart:36:7 • avoid_print
+2025-08-10T12:40:59.3222177Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls_web.dart:45:34 • deprecated_member_use
+2025-08-10T12:40:59.3223282Z    info • Use a 'SizedBox' to add whitespace to a layout • lib/widgets/camera_controls_web.dart:84:15 • sized_box_for_whitespace
+2025-08-10T12:40:59.3224192Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls_web.dart:106:45 • deprecated_member_use
+2025-08-10T12:40:59.3225368Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls_web.dart:138:45 • deprecated_member_use
+2025-08-10T12:40:59.3226440Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls_web.dart:145:44 • deprecated_member_use
+2025-08-10T12:40:59.3227461Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls_web.dart:190:40 • deprecated_member_use
+2025-08-10T12:40:59.3228476Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls_web.dart:191:40 • deprecated_member_use
+2025-08-10T12:40:59.3229505Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls_web.dart:196:40 • deprecated_member_use
+2025-08-10T12:40:59.3230529Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls_web.dart:197:40 • deprecated_member_use
+2025-08-10T12:40:59.3231593Z    info • Use a 'SizedBox' to add whitespace to a layout • lib/widgets/camera_controls_web.dart:214:17 • sized_box_for_whitespace
+2025-08-10T12:40:59.3232560Z    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/widgets/camera_controls_web.dart:231:62 • deprecated_member_use
+2025-08-10T12:40:59.3233336Z   error • The name 'MyApp' isn't a class • test/widget_test.dart:16:35 • creation_with_non_type
+2025-08-10T12:40:59.3233636Z 
+2025-08-10T12:40:59.3459823Z 73 issues found. (ran in 10.8s)
+2025-08-10T12:40:59.3567733Z ##[error]Process completed with exit code 1.

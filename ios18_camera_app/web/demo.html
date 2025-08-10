@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS 18 Camera App Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #0a0a0a);
+            color: white;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .camera-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #4a4a4a, #2d2d2d, #000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .camera-preview {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #333, #666, #000);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .camera-icon {
+            width: 200px;
+            height: 200px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        .hello-world {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .hello-world h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .hello-world p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            opacity: 0.8;
+        }
+
+        .top-controls {
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 20;
+        }
+
+        .control-button {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .control-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .control-button.active {
+            background: rgba(0, 122, 255, 0.3);
+            color: #007AFF;
+        }
+
+        .bottom-controls {
+            position: absolute;
+            bottom: 40px;
+            left: 20px;
+            right: 20px;
+            z-index: 20;
+        }
+
+        .camera-modes {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .mode-button {
+            margin: 0 15px;
+            padding: 8px 16px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mode-button.active {
+            color: #FFCC00;
+            font-weight: 600;
+            background: rgba(255, 204, 0, 0.1);
+            border-radius: 20px;
+        }
+
+        .main-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .gallery-button {
+            width: 50px;
+            height: 50px;
+            background: rgba(128, 128, 128, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .capture-button {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 4px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .capture-button:active {
+            transform: scale(0.95);
+        }
+
+        .flip-button {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .blur-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            backdrop-filter: blur(15px);
+            background: rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .blur-overlay.active {
+            display: block;
+        }
+
+        .blur-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+        }
+
+        .grid-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .grid-line {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .grid-line.vertical {
+            width: 1px;
+            height: 100%;
+            top: 0;
+        }
+
+        .grid-line.vertical:first-child {
+            left: 33.33%;
+        }
+
+        .grid-line.vertical:last-child {
+            left: 66.66%;
+        }
+
+        .grid-line.horizontal {
+            height: 1px;
+            width: 100%;
+            left: 0;
+        }
+
+        .grid-line.horizontal:first-child {
+            top: 33.33%;
+        }
+
+        .grid-line.horizontal:last-child {
+            top: 66.66%;
+        }
+    </style>
+</head>
+<body>
+    <div class="camera-container">
+        <div class="camera-preview">
+            <div class="camera-icon">📷</div>
+            
+            <div class="hello-world">
+                <h1>Hello World</h1>
+                <p>iOS 18 Camera Demo</p>
+                <p style="font-size: 14px; opacity: 0.6;">Web Version - Camera Simulation</p>
+            </div>
+
+            <div class="grid-lines" id="gridLines">
+                <div class="grid-line vertical"></div>
+                <div class="grid-line vertical"></div>
+                <div class="grid-line horizontal"></div>
+                <div class="grid-line horizontal"></div>
+            </div>
+
+            <div class="blur-overlay" id="blurOverlay">
+                <div class="blur-indicator">
+                    <span style="margin-right: 8px;">⚪</span>
+                    <span>Portrait Mode</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-controls">
+            <div class="control-button">✕</div>
+            <div style="display: flex; gap: 12px;">
+                <div class="control-button" id="blurButton" onclick="toggleBlur()">⚪</div>
+                <div class="control-button">⚙️</div>
+            </div>
+        </div>
+
+        <div class="bottom-controls">
+            <div class="camera-modes">
+                <button class="mode-button">VIDEO</button>
+                <button class="mode-button active">PHOTO</button>
+                <button class="mode-button">PORTRAIT</button>
+            </div>
+
+            <div class="main-controls">
+                <div class="gallery-button"></div>
+                <div class="capture-button" onclick="simulateCapture()"></div>
+                <div class="flip-button" onclick="simulateFlip()">🔄</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isBlurEnabled = false;
+
+        function toggleBlur() {
+            isBlurEnabled = !isBlurEnabled;
+            const blurOverlay = document.getElementById('blurOverlay');
+            const blurButton = document.getElementById('blurButton');
+            const gridLines = document.getElementById('gridLines');
+            
+            if (isBlurEnabled) {
+                blurOverlay.classList.add('active');
+                blurButton.classList.add('active');
+                gridLines.style.display = 'none';
+            } else {
+                blurOverlay.classList.remove('active');
+                blurButton.classList.remove('active');
+                gridLines.style.display = 'block';
+            }
+        }
+
+        function simulateCapture() {
+            // Flash effect
+            document.body.style.background = 'white';
+            setTimeout(() => {
+                document.body.style.background = 'linear-gradient(135deg, #1a1a1a, #2d2d2d, #0a0a0a)';
+            }, 100);
+
+            // Vibration if supported
+            if ('vibrate' in navigator) {
+                navigator.vibrate(50);
+            }
+        }
+
+        function simulateFlip() {
+            const cameraIcon = document.querySelector('.camera-icon');
+            cameraIcon.style.transform = 'rotateY(180deg)';
+            setTimeout(() => {
+                cameraIcon.style.transform = 'rotateY(0deg)';
+            }, 300);
+
+            if ('vibrate' in navigator) {
+                navigator.vibrate(20);
+            }
+        }
+
+        // Mode switching
+        document.querySelectorAll('.mode-button').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.mode-button').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Add transition effects
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.camera-icon').style.transition = 'transform 0.3s ease';
+        });
+    </script>
+</body>
+</html>

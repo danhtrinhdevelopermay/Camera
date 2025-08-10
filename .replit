@@ -1,0 +1,32 @@
+modules = ["nodejs-20", "python-3.11", "flutter"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["flutter"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Demo Server"
+
+[[workflows.workflow]]
+name = "Demo Server"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd ios18_camera_app && python3 -m http.server 5000 --directory web"
+waitForPort = 5000
+
+[[ports]]
+localPort = 5000
+externalPort = 80
